@@ -7,7 +7,7 @@
 
 #include "tag.h"
 
-#include "callback.h"
+#include "array.h"
 #include <CoreFoundation/CoreFoundation.h>
 #include <dirent.h>
 #include <getopt.h>

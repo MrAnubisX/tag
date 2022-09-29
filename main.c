@@ -1,6 +1,3 @@
-#include <stdio.h>
+#include <tag.h>
 
-int main() {
-    printf("Hello, World!\n");
-    return 0;
-}
+int main(int argc, char **argv) { return parseCommandLine(argc, argv); }
