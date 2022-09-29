@@ -2,6 +2,8 @@
 
 **tag** is a command line tool to manipulate tags on Mac OS X files (10.7.5 Lion and above), and to query for files with those tags.
 
+![img](https://i.imgur.com/PKnSrQ7.png)
+
 ## Usage
 
 ### Synopsis
