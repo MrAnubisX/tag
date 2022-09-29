@@ -131,7 +131,9 @@ The --help option will show you the command synopsis:
 tag --help
 ```
 
-## Building and Installing
+## Prebuilt Packages
+
+You may install **tag** using the following package managers:
 
 
 ### Homebrew
