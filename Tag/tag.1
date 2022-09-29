@@ -1,4 +1,4 @@
-.TH "TAG" "1" "Jul 2019" "Tag" "tag"
+.TH "TAG" "1" "Sept 2022" "Tag" "tag"
 .
 .SH "NAME"
 \fBtag\fR \- A tool for manipulating and querying file tags.
@@ -19,12 +19,6 @@ Set tags on file
 .TP
 .BR \-m ", " \-\-match\ \fItags\ \fIpath\fR
 Display files with matching tags
-.TP
-.BR \-f ", " \-\-find\ \fItags\ \fIpath\fR
-Find all files with tags (-A, -e, -R ignored)
-.TP
-.BR \-u ", " \-\-usage\ \fItags\ \fIpath\fR
-Display tag usage
 .TP
 .BR \-l ", " \-\-list\ \fItags\ \fIpath\fR
 List the tags on file
@@ -76,18 +70,9 @@ Terminate each directory name with a slash
 .TP
 .BR \-0 ", " \-\-null
 Terminate lines with NUL (\0) for use with xargs -0
-.TP
-.BR "    \-\-home"
-Find tagged files in user home directory
-.TP
-.BR "    \-\-local"
-Find tagged files in home + local filesystems
-.TP
-.BR "    \-\-network"qq
-Find tagged files in home + local + network filesystems
 .
 .SH BUGS
 Report on https://github.com/jdberry/tag/issues
 .
-.SH AUTHOR
-James Berry
+.SH AUTHOR(s)
+James Berry, Chris Snead

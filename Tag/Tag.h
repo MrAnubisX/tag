@@ -1,5 +1,7 @@
+// tag.h
+// Tag
 //
-// Created by Christopher Snead on 9/11/22.
+// Created by Christopher Snead on 2022/09/28.
 //
 
 #ifndef TAG_TAG_H
@@ -7,7 +9,7 @@
 
 // clang-format off
 #define PROGRAM_NAME    "tag"
-#define PROGRAM_VERSION "0.1.0"
+#define PROGRAM_VERSION "0.11.0"
 
 // Extended attribute binary property list buffer size
 #define EXT_ATTR_SIZE   10000
