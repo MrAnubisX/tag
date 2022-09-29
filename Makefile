@@ -8,9 +8,8 @@ INSTALL		= /usr/bin/install
 bindir 		= ${prefix}/bin
 man1dir		= ${prefix}/share/man/man1
 
-SRCS		= Tag/main.m Tag/Tag.m Tag/TagName.m
-LIBS		= -framework Foundation \
-			  -framework CoreServices
+SRCS		= main.c Tag/tag.c Tag/array.c
+LIBS		= -framework CoreFoundation
 
 PROGRAM		= bin/tag
 MANPAGE		= Tag/tag.1
