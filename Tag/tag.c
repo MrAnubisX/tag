@@ -1,8 +1,30 @@
 //
-// tag_tests.c
+// tag.c
 // Tag
 //
-// Created by Christopher Snead on 9/11/22.
+// Created by Christopher Snead on 2022/09/28.
+// Based on work by James Berry on 10/25/13.
+//
+//  The MIT License (MIT)
+//
+//  Copyright (c) 2013-2022 James Berry
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy of
+//  this software and associated documentation files (the "Software"), to deal in
+//  the Software without restriction, including without limitation the rights to
+//  use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+//  the Software, and to permit persons to whom the Software is furnished to do so,
+//  subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+//  FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+//  COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+//  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+//  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
 #include "tag.h"
@@ -739,14 +761,9 @@ void displayUsage(char *programName) {
     "    tag -r | --remove <tags> <path>...  Remove tags from file\n"
     "    tag -s | --set <tags> <path>...     Set tags on file\n"
     "    tag -m | --match <tags> <path>...   Display files with matching tags\n"
-    "    tag -f | --find <tags> <path>...    Find all files with tags (-A, -e, "
-    "-R ignored)\n"
-    "    tag -u | --usage <tags> <path>...   Display tags used, with "
-    "displayUsage "
-    "counts\n"
     "    tag -l | --list <path>...           List the tags on file\n"
-    "  <tags> is a comma-separated list of tag names; use * to match/find any "
-    "tag.\n"
+    "  <tags> is a comma-separated list of tag names; use * to match any tag. "
+    "use tag_name:color to specify color when setting.\n"
     "  additional options:\n"
     "        -v | --version      Display version\n"
     "        -h | --help         Display this help\n"
@@ -765,12 +782,7 @@ void displayUsage(char *programName) {
     "        -c | --color        Display tags in color\n"
     "        -p | --slash        Terminate each directory name with a slash\n"
     "        -0 | --nul          Terminate lines with NUL (\\0) for use with "
-    "xargs -0\n"
-    "             --home         Find tagged files in user home directory\n"
-    "             --local        Find tagged files in home + local "
-    "filesystems\n"
-    "             --network      Find tagged files in home + local + network "
-    "filesystems\n");
+    "xargs -0\n");
 }
 
 void displayVersion() { printf("%s v%s\n", PROGRAM_NAME, PROGRAM_VERSION); }
