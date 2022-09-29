@@ -127,17 +127,26 @@ If your terminal supports ANSI color sequences, you may pass the -c/--color opti
 
 The --help option will show you the command synopsis:
 
-    tag --help
+```bash
+tag --help
+```
 
 ## Building and Installing
 
-### MacPorts
 
-	sudo port install tag
-	
 ### Homebrew
-	
-	brew install tag
+
+```bash
+brew install sneadc/personal/tag
+```
+
+Alternatively, you may add this repository to your taps before installing the
+formula:
+
+```bash
+brew tap sneadc/personal
+brew install tag
+```
 
 Building and Installing
 ---
@@ -145,9 +154,17 @@ You must have Xcode or the Command Line Tools installed to build/install.
 
 To build without installing:
 
-    cmake . && cmake --build .
+```
+make
+```
 
-This will build **tag** into ./tag
+This will build **tag** into ./bin/tag
+
+To build and install onto your system:
+
+```
+make && sudo make install
+```
 
 This will install **tag** at /usr/local/bin/tag and the man page at /usr/local/share/man/man1/tag.1
 
