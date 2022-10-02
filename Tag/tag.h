@@ -9,7 +9,7 @@
 
 // clang-format off
 #define PROGRAM_NAME    "tag"
-#define PROGRAM_VERSION "2022.3.1"
+#define PROGRAM_VERSION "2022.3.1.02"
 
 // Extended attribute binary property list buffer size
 #define EXT_ATTR_SIZE   10000
