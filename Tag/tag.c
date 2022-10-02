@@ -620,7 +620,7 @@ void printPath(char *path, UserTag *userTags, long tagCount,
     snprintf(fileName, FILENAME_MAX, "%s%s", path, suffix);
   }
 
-  bool tagsOnSeparateLines = !!(outputFlags & OutputFlagsGarrulous);
+  bool tagsOnSeparateLines = (outputFlags & OutputFlagsGarrulous) != 0;
   bool printTags = (outputFlags & OutputFlagsTags) && tagCount;
   char lineTerminator = (outputFlags & OutputFlagsNulTerminate) ? '\0' : '\n';
 
@@ -641,7 +641,7 @@ void printPath(char *path, UserTag *userTags, long tagCount,
     char *tagSeparator;
     char *startingSeparator;
     if (tagsOnSeparateLines) {
-      needLineTerm = !!fileName;
+      needLineTerm = fileName != NULL;
       tagSeparator = fileName ? "    " : "";
       startingSeparator = tagSeparator;
     } else {
