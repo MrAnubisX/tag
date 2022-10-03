@@ -57,6 +57,7 @@ int parseCommandLine(int argc, char *const argv[]) {
     {"garrulous", no_argument, 0, 'g'},
     {"no-garrulous", no_argument, 0, 'G'},
     {"color", no_argument, 0, 'c'},
+    {"no-color", no_argument, 0, 'C'},
     {"slash", no_argument, 0, 'p'},
     {"nul", no_argument, 0, '0'},
     // Directory enumeration options
@@ -90,7 +91,7 @@ int parseCommandLine(int argc, char *const argv[]) {
 
   // Parse options
   int ndx = 0;
-  while ((opt = getopt_long(argc, argv, "s:a:r:lnNtTgGcp0ARhv", options,
+  while ((opt = getopt_long(argc, argv, "s:a:r:lnNtTgGcCp0ARhv", options,
                             &ndx)) != -1) {
     switch (opt) {
       case OperationModeSet:
@@ -126,6 +127,9 @@ int parseCommandLine(int argc, char *const argv[]) {
         break;
       case 'c':
         outputFlags |= OutputFlagsColor;
+        break;
+      case 'C':
+        outputFlags &= ~OutputFlagsColor;
         break;
       case 'p':
         outputFlags |= OutputFlagsSlashDirectory;
@@ -784,6 +788,7 @@ void displayUsage(char *programName) {
     "        -G | --no-garrulous Display tags comma-separated after filename "
     "(default)\n"
     "        -c | --color        Display tags in color\n"
+    "        -C | --no-color     Turn off display tags in color\n"
     "        -p | --slash        Terminate each directory name with a slash\n"
     "        -0 | --nul          Terminate lines with NUL (\\0) for use with "
     "xargs -0\n");

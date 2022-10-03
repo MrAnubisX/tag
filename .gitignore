@@ -1,5 +1,8 @@
-bin
-build
+/bin/
+/.build-*/
+/Tests/
+/.idea/
+.clang-format
 
 # Created by https://www.toptal.com/developers/gitignore/api/cmake
 # Edit at https://www.toptal.com/developers/gitignore?templates=cmake
@@ -24,8 +27,3 @@ _deps
 *-prefix/
 
 # End of https://www.toptal.com/developers/gitignore/api/cmake
-
-cmake-build-*/
-Tests/
-.idea/
-.clang-format
