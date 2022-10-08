@@ -722,7 +722,8 @@ TagColor getColorCode(char *color) {
     case '5':
     case '6':
     case '7':
-      return strtol(color, NULL, 10);
+      if (strnlen(color, 2) == 1) return strtol(color, NULL, 10);
+      break;
     case 'G':
       if (strncasecmp(color, "gray", 4) == 0) return TagColorGray;
       if (strncasecmp(color, "green", 5) == 0) return TagColorGreen;
