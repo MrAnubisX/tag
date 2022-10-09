@@ -765,7 +765,7 @@ void displayUsage(char *programName) {
   printf(
     "%s - %s", programName,
     "A tool for manipulating and querying file tags.\n"
-    "  displayUsage:\n"
+    "  Usage:\n"
     "    tag -a | --add <tags> <path>...     Add tags to file\n"
     "    tag -r | --remove <tags> <path>...  Remove tags from file\n"
     "    tag -s | --set <tags> <path>...     Set tags on file\n"
