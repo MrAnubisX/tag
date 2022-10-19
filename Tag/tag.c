@@ -530,7 +530,7 @@ UInt8 *createPlistBinary(size_t *length, UserTag *userTags, int tagCount) {
   // Release the foundation array
   CFRelease(arr);
 
-  // Update the bin' length value
+  // Update the bin length value
   *length = CFDataGetLength(dat);
 
   // Property list in binary format
@@ -722,26 +722,26 @@ TagColor getColorCode(char *color) {
     case '5':
     case '6':
     case '7':
-      if (strnlen(color, 2) == 1) return strtol(color, NULL, 10);
+      if (strnlen(color, 5) == 1) return strtol(color, NULL, 10);
       break;
     case 'G':
-      if (strncasecmp(color, "gray", 4) == 0) return TagColorGray;
-      if (strncasecmp(color, "green", 5) == 0) return TagColorGreen;
+      if (strncasecmp(color, "gray", 10) == 0) return TagColorGray;
+      if (strncasecmp(color, "green", 10) == 0) return TagColorGreen;
       break;
     case 'P':
-      if (strncasecmp(color, "purple", 6) == 0) return TagColorPurple;
+      if (strncasecmp(color, "purple", 10) == 0) return TagColorPurple;
       break;
     case 'B':
-      if (strncasecmp(color, "blue", 4) == 0) return TagColorBlue;
+      if (strncasecmp(color, "blue", 10) == 0) return TagColorBlue;
       break;
     case 'Y':
-      if (strncasecmp(color, "yellow", 6) == 0) return TagColorYellow;
+      if (strncasecmp(color, "yellow", 10) == 0) return TagColorYellow;
       break;
     case 'R':
-      if (strncasecmp(color, "red", 3) == 0) return TagColorRed;
+      if (strncasecmp(color, "red", 10) == 0) return TagColorRed;
       break;
     case 'O':
-      if (strncasecmp(color, "orange", 6) == 0) return TagColorOrange;
+      if (strncasecmp(color, "orange", 10) == 0) return TagColorOrange;
       break;
   }
   return TagColorNone;
