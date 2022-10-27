@@ -19,10 +19,22 @@ CFStringRef TagCallBackCopyDescription(const void *value) {
   return (CFStringRef)value;
 }
 
+// Compare the strings without the last 2 characters (new line and color code)
+// Attempts to use CFStringCompareWithOptions would not work for some reason.
 Boolean TagCallBacksEqual(const void *s1, const void *s2) {
-  // Compare the strings without the last 2 characters (new line and color code)
-  // Attempts to use CFStringCompareWithOptions would not work for some reason.
-  return CFStringCompareWithOptions(s1, s2,
-                                    CFRangeMake(0, CFStringGetLength(s1) - 2),
-                                    kCFCompareCaseInsensitive);
+  CFIndex l1 = CFStringGetLength(s1);
+  CFIndex l2 = CFStringGetLength(s2);
+  CFStringEncoding enc = CFStringGetSystemEncoding();
+  char *p1 = calloc(l1 + 1, sizeof(char));
+  char *p2 = calloc(l2 + 1, sizeof(char));
+
+  CFStringGetCString(s1, p1, l1 + 1, enc);
+  CFStringGetCString(s2, p2, l2 + 1, enc);
+
+  long result = strncasecmp(p1, p2, l1 - 2);
+
+  free(p1);
+  free(p2);
+
+  return (result == 0);
 }
