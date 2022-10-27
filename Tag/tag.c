@@ -571,7 +571,7 @@ UserTag *createUserTagsFromPath(char *path, int *tagCount) {
     if (cfData) CFRelease(cfData);
 
     // Return the default if creating the property list from the data failed
-    if(!cfArray) return userTags;
+    if (!cfArray) return userTags;
 
     // Update the tag count
     *tagCount = (int)CFArrayGetCount(cfArray);
