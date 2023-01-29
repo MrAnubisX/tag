@@ -8,7 +8,7 @@ INSTALL		= /usr/bin/install
 bindir 		= ${prefix}/bin
 man1dir		= ${prefix}/share/man/man1
 
-SRCS		= main.c Tag/tag.c Tag/array.c
+SRCS		= main.c Tag/usertag.c Tag/array.c
 LIBS		= -framework CoreFoundation
 
 PROGRAM		= bin/tag
