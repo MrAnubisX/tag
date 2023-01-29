@@ -4,8 +4,8 @@
 // Created by Christopher Snead on 2022/09/28.
 //
 
-#ifndef TAG_TAG_H
-#define TAG_TAG_H
+#ifndef TAG_USERTAG_H
+#define TAG_USERTAG_H
 
 // clang-format off
 #define PROGRAM_NAME    "tag"
@@ -188,8 +188,9 @@ void displayVersion();
  * @brief Create a formatted ansi color sequence for the given tag
  * @param buf The string buffer to receive the formatted output
  * @param tag The tag struct containing the label and color code
+ * @return char* string representation of the tag
  */
-void displayStringForTag(char *, UserTag *, OutputFlags);
+char *displayStringForTag(char *, UserTag *, OutputFlags);
 
 /**
  * @brief Convert color string to TagColor integer code
@@ -234,4 +235,4 @@ void freeUserTags(UserTag *, int);
  */
 int tagCompare(const void *, const void *);
 
-#endif  // TAG_TAG_H
+#endif  // TAG_USERTAG_H

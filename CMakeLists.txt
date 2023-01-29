@@ -4,8 +4,6 @@ project(Tag C)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
-
 add_executable(tag main.c)
 
 include_directories(Tag)

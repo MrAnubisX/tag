@@ -28,7 +28,7 @@
 //  IN THE SOFTWARE.
 //
 
-#include "tag.h"
+#include "usertag.h"
 
 #include "array.h"
 #include <CoreFoundation/CoreFoundation.h>
@@ -678,8 +678,12 @@ void printPath(char *path, UserTag *userTags, long tagCount,
   if (fileName) free(fileName);
 }
 
-void displayStringForTag(char *buf, UserTag *tag, OutputFlags outputFlags) {
+char *displayStringForTag(char *buf, UserTag *tag, OutputFlags outputFlags) {
   char *colorSequence = NULL;
+  static char buffer[TAG_BUF_SIZE] = "";
+
+  if(!buf)
+    buf = buffer;
 
   if (outputFlags & OutputFlagsColor) {
     switch (tag->color) {
@@ -714,6 +718,8 @@ void displayStringForTag(char *buf, UserTag *tag, OutputFlags outputFlags) {
   } else {
     strncpy(buf, tag->name, strlen(tag->name) + 1);
   }
+
+  return buf;
 }
 
 TagColor getColorCode(char *color) {
